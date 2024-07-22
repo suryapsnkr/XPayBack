@@ -17,7 +17,7 @@ async def register_user(user: schemas.UserCreate, db: Session = Depends(get_db))
     db_user = crud.create_user(db=db, user=user)
     return db_user
 
-@app.post("/profile/{user_id}", response_model=schemas.UserInDB)
+@app.post("/profile/{user_id}")
 async def create_user_profile(user_id: int, file: UploadFile, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter(models.User.id == user_id).first()
     if db_user is None:
