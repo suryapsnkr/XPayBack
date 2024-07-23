@@ -17,5 +17,8 @@ Write a program for user registration in FastAPI ( Using two database PostgreSQL
 ![Screenshot 2024-07-22 172625](https://github.com/user-attachments/assets/2616ba04-fc24-4bff-89fe-81f89001ce0f)
 <br><br>
 ![Screenshot 2024-07-22 172733](https://github.com/user-attachments/assets/eba9cc0c-b994-484c-b4bb-ba60dc81bb9f)
+<br><br>
+![Screenshot 2024-07-23 193704](https://github.com/user-attachments/assets/ebdfbedd-3ebb-466d-be2e-384732a62301)
+
 
 
