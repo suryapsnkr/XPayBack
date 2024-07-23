@@ -1,0 +1,2 @@
+Python 3.12.3
+FastAPI CLI version: 0.0.4
