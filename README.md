@@ -1,10 +1,10 @@
 # xpayback
 Write a program for user registration in FastAPI ( Using two database PostgreSQL and MobgoDB )<br><br>
 
-1. PostgreSQL<br>
+1. PostgreSQL(For Users)<br>
 ![Screenshot 2024-07-22 171306](https://github.com/user-attachments/assets/3453c571-ed61-4671-b3ac-71df3768192e)
 <br><br>
-2. MobgoDB<br>
+2. MobgoDB(For Profiles)<br>
 ![Screenshot 2024-07-22 171323](https://github.com/user-attachments/assets/34fd4c21-db8c-4fb4-a553-6a64adfb9978)
 <br><br>
 3. Testing APIs<br>
