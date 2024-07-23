@@ -11,18 +11,18 @@ models.Base.metadata.create_all(bind=engine)
 
 @app.post("/register/", response_model=schemas.UserInDB)
 async def register_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    db_user = crud.get_user_by_email(db, email=user.email, phone = user.phone)
-    if db_user:
+    db_user_email = crud.get_user_by_email(db, email=user.email)
+    db_user_phone = crud.get_user_by_phone(db, phone = user.phone)
+    if db_user_email or db_user_phone:
         raise HTTPException(status_code=400, detail="Email or Phone already registered")
     db_user = crud.create_user(db=db, user=user)
     return db_user
 
 @app.post("/profile/{user_id}")
 async def create_user_profile(user_id: int, file: UploadFile, db: Session = Depends(get_db)):
-    db_user_email = crud.get_user_by_email(db, email=user.email)
-    db_user_phone = crud.get_user_by_phone(db, phone = user.phone)
-    if db_user_email or db_user_phone:
-        raise HTTPException(status_code=400, detail="Email or Phone already registered")
+    db_user = db.query(models.User).filter(models.User.id == user_id).first()
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
     else:
         profile = await crud.get_profile(mongodb, user_id)
         if profile:
