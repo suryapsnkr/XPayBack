@@ -46,3 +46,7 @@ async def read_profile(user_id: int):
     if profile is None:
         raise HTTPException(status_code=404, detail="Profile not found")
     return profile
+
+@app.get("/")
+async def home_page():
+    raise HTTPException(status_code=200, detail="Please visit on http://127.0.0.1:8000/docs")
