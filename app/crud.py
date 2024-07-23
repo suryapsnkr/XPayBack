@@ -4,8 +4,8 @@ from . import schemas
 import bcrypt
 from motor.motor_asyncio import AsyncIOMotorClient
 
-def get_user_by_email(db: Session, email: str):
-    return db.query(models.User).filter(models.User.email == email).first()
+def get_user_by_email(db: Session, email: str, phone:str):
+    return db.query(models.User).filter(models.User.email == email, models.User.phone == phone).first()
 
 def create_user(db: Session, user: schemas.UserCreate):
     fake_hashed_password = bcrypt.hashpw(user.password.encode('utf-8'), bcrypt.gensalt())
